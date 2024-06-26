@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>BSIT21_ScheduleManagementSystem</RootNamespace>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\StudentScheduleManagementData\StudentScheduleManagementData.csproj" />
+    <ProjectReference Include="..\StudentScheduleManagementModel\StudentScheduleManagementModel.csproj" />
+    <ProjectReference Include="..\StudentScheduleManagementService\StudentScheduleManagementService.csproj" />
+  </ItemGroup>
+
+</Project>
