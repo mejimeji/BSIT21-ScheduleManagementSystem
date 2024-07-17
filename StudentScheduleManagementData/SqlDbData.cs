@@ -7,7 +7,7 @@ namespace StudentScheduleManagementData
     {
 
         string connectionString
-        = "Data Source =LAPTOP-3VKK1J8H\\SQLEXPRESS; Initial Catalog = StudentScheduleManagement; Integrated Security = True;";
+        = "Server=localhost\\SQLEXPRESS;Database=ScheduleManagementSystemdb;Trusted_Connection=True;";
         //Name po ng laptop ko yung Server name sa DataBase
         SqlConnection sqlConnection;
 
@@ -18,7 +18,7 @@ namespace StudentScheduleManagementData
 
         public List<User> GetUsers()
         {
-            string selectStatement = "SELECT studentno, password, email FROM users";
+            string selectStatement = "SELECT * FROM Users";
 
             SqlCommand selectCommand = new SqlCommand(selectStatement, sqlConnection);
 
@@ -29,16 +29,24 @@ namespace StudentScheduleManagementData
 
             while (reader.Read())
             {
-                string StudentNo = reader["studentno"].ToString();
-                string Email = reader["email"].ToString();
-                string Password = reader["password"].ToString();
+                string studno = reader["StudNo"].ToString();
+                string email = reader["Email"].ToString();
+                string password = reader["Password"].ToString();
+                string profile = reader["Profile"].ToString();
+                DateTime dateUpdated = (DateTime)reader["DateUpdated"];
+                DateTime dateVerified = (DateTime)reader["DateVerified"];
+                int status = Convert.ToInt32(reader["Status"]);
 
 
                 User readUser = new User();
-                readUser.studno = StudentNo;
-                readUser.password = Password;
-                readUser.email = Email;
-                
+                readUser.studno = studno;
+                readUser.email = email;
+                readUser.password = password;
+                readUser.dateUpdated = dateUpdated;
+                readUser.dateVerified = dateVerified;
+                readUser.status = status;
+
+
 
                 users.Add(readUser);
             }

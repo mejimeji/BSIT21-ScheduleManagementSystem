@@ -12,12 +12,22 @@ namespace Client
 
             var users = getServices.GetUsersByStatus(1);
 
+            Console.WriteLine("BSIT 2-1 STUDENTS");
+            Console.WriteLine("");
+            Console.WriteLine("");
+
             foreach (var item in users)
             {
-                Console.WriteLine(item.studno);
-                Console.WriteLine(item.password);
+                Console.WriteLine("Student Number: " + item.studno);
+                Console.WriteLine("Password: "+item.password);
+                Console.WriteLine("Date Updated: "+item.dateUpdated);
+                Console.WriteLine("Date Verified: "+item.dateVerified);
+                Console.WriteLine("Status: "+item.status);
+                Console.WriteLine("");
+                Console.WriteLine("");
             }
 
+            Console.ReadKey();
         }
     }
 }

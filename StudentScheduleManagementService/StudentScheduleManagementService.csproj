@@ -7,6 +7,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\StudentScheduleManagementData\StudentScheduleManagementData.csproj" />
     <ProjectReference Include="..\StudentScheduleManagementModel\StudentScheduleManagementModel.csproj" />
   </ItemGroup>
