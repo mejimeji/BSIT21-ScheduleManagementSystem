@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\StudentScheduleManagementModel\BSIT21StudentManagementModel.csproj" />
-    <ProjectReference Include="..\StudentScheduleManagementModel\StudentScheduleManagementModel.csproj" />
   </ItemGroup>
 
 </Project>
