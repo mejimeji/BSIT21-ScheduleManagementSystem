@@ -20,9 +20,19 @@ namespace StudentScheduleManagementService
             return result;
         }
 
-        public bool CreateUser(string Studno, string password)
+        public bool CreateUser(string studno, string email, string password, DateTime dateUpdated, DateTime dateVerified, int status)
         {
-            User user = new User { studno = Studno, password = password };
+            User user = new User 
+            { 
+                studno = studno, 
+                email = email, 
+                password = password,
+                dateUpdated = dateUpdated,
+                dateVerified = dateVerified,
+                status = status 
+
+            };
+
 
             return CreateUser(user);
         }
@@ -39,9 +49,9 @@ namespace StudentScheduleManagementService
             return result;
         }
 
-        public bool UpdateUser(string Studno, string password)
+        public bool UpdateUser(string Studno, string Email, string Password, DateTime DateVerified, DateTime DateUpdated, int Status)
         {
-            User user = new User { studno = Studno, password = password };
+            User user = new User { studno = Studno, email = Email, password = Password, dateVerified = DateVerified, dateUpdated = DateUpdated, status = Status };
 
             return UpdateUser(user);
         }
@@ -56,6 +66,13 @@ namespace StudentScheduleManagementService
             }
 
             return result;
+        }
+
+        public bool DeleteUser(string Studno, string Email, string Password, DateTime DateVerified, DateTime DateUpdated, int Status)
+        {
+            User user = new User { studno = Studno, email = Email, password = Password, dateVerified = DateVerified, dateUpdated = DateUpdated, status = Status };
+
+            return DeleteUser(user);
         }
     }
 }

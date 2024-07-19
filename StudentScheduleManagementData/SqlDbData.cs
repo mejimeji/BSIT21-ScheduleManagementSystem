@@ -7,7 +7,8 @@ namespace StudentScheduleManagementData
     {
 
         string connectionString
-        = "Server=localhost\\SQLEXPRESS;Database=ScheduleManagementSystemdb;Trusted_Connection=True;";
+            = "Server=tcp:20.2.66.4,1433;Database=ScheduleManagementSystemdb;User Id=sa;Password=!Root123";
+        //= "Server=localhost\\SQLEXPRESS;Database=ScheduleManagementSystemdb;Trusted_Connection=True;";
         //Name po ng laptop ko yung Server name sa DataBase
         SqlConnection sqlConnection;
 
@@ -56,17 +57,21 @@ namespace StudentScheduleManagementData
             return users;
         }
 
-        public int AddUser(string studno, string password, string email)
+        public int AddUser(string studno, string email, string password, UserProfile profile, DateTime dateUpdated, DateTime dateVerified, int status)
         {
             int success;
 
-            string insertStatement = "INSERT INTO users VALUES (@studno, @password, @email)";
+            string insertStatement = "INSERT INTO Users VALUES (@StudNo, @Email, @Password, @DateUpdated, @DateVerified, @Status)";
 
             SqlCommand insertCommand = new SqlCommand(insertStatement, sqlConnection);
 
-            insertCommand.Parameters.AddWithValue("@studno", studno);
-            insertCommand.Parameters.AddWithValue("@password", password);
-            insertCommand.Parameters.AddWithValue("@email", email);
+            insertCommand.Parameters.AddWithValue("@StudNo", studno);
+            insertCommand.Parameters.AddWithValue("@Email", email);
+            insertCommand.Parameters.AddWithValue("@Password", password);
+            insertCommand.Parameters.AddWithValue("@DateUpdated", dateUpdated);
+            insertCommand.Parameters.AddWithValue("@DateVerified", dateVerified);
+            insertCommand.Parameters.AddWithValue("@Status", 1);
+
             sqlConnection.Open();
 
             success = insertCommand.ExecuteNonQuery();
@@ -80,13 +85,13 @@ namespace StudentScheduleManagementData
         {
             int success;
 
-            string updateStatement = $"UPDATE users SET password = @Password WHERE username = @username";
+            string updateStatement = $"UPDATE users SET password = @Password WHERE studno = @StudNo AND email = @Email";
             SqlCommand updateCommand = new SqlCommand(updateStatement, sqlConnection);
             sqlConnection.Open();
 
-            updateCommand.Parameters.AddWithValue("@password", password);
-            updateCommand.Parameters.AddWithValue("@studentno", studno);
-            updateCommand.Parameters.AddWithValue("@email", email);
+            updateCommand.Parameters.AddWithValue("@Password", password);
+            updateCommand.Parameters.AddWithValue("@StudNo", studno);
+            updateCommand.Parameters.AddWithValue("@Email", email);
 
             success = updateCommand.ExecuteNonQuery();
 
@@ -99,11 +104,11 @@ namespace StudentScheduleManagementData
         {
             int success;
 
-            string deleteStatement = $"DELETE FROM users WHERE username = @username";
+            string deleteStatement = $"DELETE FROM users WHERE StudNo = @StudNo";
             SqlCommand deleteCommand = new SqlCommand(deleteStatement, sqlConnection);
             sqlConnection.Open();
 
-            deleteCommand.Parameters.AddWithValue("@studno", studno);
+            deleteCommand.Parameters.AddWithValue("@StudNo", studno);
 
             success = deleteCommand.ExecuteNonQuery();
 

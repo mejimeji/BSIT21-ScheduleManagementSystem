@@ -11,7 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\StudentScheduleManagementModel\StudentScheduleManagementModel.csproj" />
+    <ProjectReference Include="..\StudentScheduleManagementData\BSIT21StudentManagementData.csproj" />
+    <ProjectReference Include="..\StudentScheduleManagementModel\BSIT21StudentManagementModel.csproj" />
   </ItemGroup>
 
 </Project>

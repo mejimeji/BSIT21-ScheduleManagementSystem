@@ -11,8 +11,6 @@ namespace StudentScheduleManagementData
             users = new List<User>();
             sqlData = new SqlDbData();
 
-            //UserFactory _userFactory = new UserFactory();
-            //users = _userFactory.GetDummyUsers();
         }
 
         public List<User> GetUsers()
@@ -23,7 +21,7 @@ namespace StudentScheduleManagementData
 
         public int AddUser(User user)
         {
-            return sqlData.AddUser(user.studno, user.password, user.email);
+            return sqlData.AddUser(user.studno, user.email, user.password, user.profile, user.dateUpdated, user.dateVerified, user.status);
         }
 
         public int UpdateUser(User user)
