@@ -19,7 +19,7 @@ namespace StudentScheduleManagementService
 
             return result;
         }
-
+          
         public bool CreateUser(string studno, string email, string password, DateTime dateUpdated, DateTime dateVerified, int status)
         {
             User user = new User 

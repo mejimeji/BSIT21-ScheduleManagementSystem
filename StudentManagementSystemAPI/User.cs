@@ -12,6 +12,6 @@ namespace StudentManagementSystemAPI
         public DateTime DateUpdated { get; set; }
         public DateTime DateVerified { get; set; }
         public int Status { get; set; }
-
+          
     }
 }

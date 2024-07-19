@@ -12,7 +12,7 @@ namespace StudentScheduleManagementData
             sqlData = new SqlDbData();
 
         }
-
+          
         public List<User> GetUsers()
         {
             users = sqlData.GetUsers();

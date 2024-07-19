@@ -13,7 +13,7 @@ namespace StudentScheduleManagementService
 
         }
 
-
+          
         public User GetUser(string studno, string password)
         {
             User foundUser = new User();

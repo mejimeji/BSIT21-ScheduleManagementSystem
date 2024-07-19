@@ -9,7 +9,6 @@ namespace StudentScheduleManagementData
         string connectionString
             = "Server=tcp:20.2.66.4,1433;Database=ScheduleManagementSystemdb;User Id=sa;Password=!Root123";
         //= "Server=localhost\\SQLEXPRESS;Database=ScheduleManagementSystemdb;Trusted_Connection=True;";
-        //Name po ng laptop ko yung Server name sa DataBase
         SqlConnection sqlConnection;
 
         public SqlDbData()

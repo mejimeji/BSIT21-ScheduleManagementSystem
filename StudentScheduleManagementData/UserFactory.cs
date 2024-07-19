@@ -5,7 +5,7 @@ namespace StudentScheduleManagementData
     public class UserFactory
     {
         private List<User> dummyUsers = new List<User>();
-
+          
         public List<User> GetDummyUsers()
         {
             dummyUsers.Add(CreateDummyUser("Capili", "Harvey", "@gmail.com"));

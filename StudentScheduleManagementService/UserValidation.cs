@@ -10,7 +10,7 @@
             bool result = getservices.GetUser(Studno) != null;
             return result;
         }
-
+          
         public bool CheckIfUserExists(string studno, string password)
         {
             bool result = getservices.GetUser(studno, password) != null;

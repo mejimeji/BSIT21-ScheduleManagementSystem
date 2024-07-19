@@ -17,7 +17,7 @@ namespace Client
             Console.WriteLine("");
 
             foreach (var item in users)
-            {
+            { 
                 Console.WriteLine("Student Number: " + item.studno);
                 Console.WriteLine("Password: "+item.password);
                 Console.WriteLine("Date Updated: "+item.dateUpdated);
