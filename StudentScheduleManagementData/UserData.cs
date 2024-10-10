@@ -21,12 +21,12 @@ namespace StudentScheduleManagementData
 
         public int AddUser(User user)
         {
-            return sqlData.AddUser(user.studno, user.email, user.password, user.profile, user.dateUpdated, user.dateVerified, user.status);
+            return sqlData.AddUser(user.studno, user.email, user.password );
         }
 
         public int UpdateUser(User user)
         {
-            return sqlData.UpdateUser(user.studno, user.password, user.email);
+            return sqlData.UpdateUser(user.email, user.status);
         }
 
         public int DeleteUser(User user)
