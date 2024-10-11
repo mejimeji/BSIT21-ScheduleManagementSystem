@@ -1,5 +1,4 @@
 ﻿using MailKit.Net.Smtp;
-using MailKit.Search;
 using MimeKit;
 
 namespace CustomerManagementServices

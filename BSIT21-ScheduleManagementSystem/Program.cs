@@ -82,7 +82,7 @@ namespace Client
 
                         if (int.TryParse(statusInput, out int status))
                         {
-                            // Assuming you have a method that updates the student's status by email
+                            
                             if (usertransactionservices.UpdateUser(Email, status))
                             {
                                 Console.WriteLine("Student status updated successfully!");
