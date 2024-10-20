@@ -39,10 +39,8 @@ namespace AccountManagement.API.Controllers
             var result = _userTransactionServices.CreateUser(
                 request.Studno,
                 request.Email,
-                request.Password,
-                request.DateUpdated,
-                request.DateVerified,
-                request.Status
+                request.Password
+
             );
 
             return new JsonResult(result);
@@ -51,7 +49,7 @@ namespace AccountManagement.API.Controllers
         [HttpPatch]
         public JsonResult UpdateUser(StudentManagementSystemAPI.User request)
         {
-            var result = _userTransactionServices.UpdateUser(request.Studno, request.Email, request.Password, request.DateVerified, request.DateUpdated, request.Status);
+            var result = _userTransactionServices.UpdateUser(request.Email, request.Status);
 
             return new JsonResult(result);
         }
@@ -62,7 +60,7 @@ namespace AccountManagement.API.Controllers
         {
             
             {
-                var result = _userTransactionServices.DeleteUser(request.Studno, request.Email, request.Password, request.DateVerified, request.DateUpdated, request.Status);
+                var result = _userTransactionServices.DeleteUser(request.Studno);
 
                 return new JsonResult(result);
 
