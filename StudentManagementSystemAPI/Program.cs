@@ -1,6 +1,14 @@
+using Amazon.S3;
+using StudentManagementSystemAPI.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.AddAWSService<IAmazonS3>();
+
+
+builder.Services.AddSingleton<IS3Service, S3Service>();
+
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
